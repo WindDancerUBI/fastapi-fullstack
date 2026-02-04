@@ -6,7 +6,7 @@ import os
 app = FastAPI()
 
 # 挂载静态文件目录
-frontend_dist_dir = os.path.join(os.path.dirname(__file__), "./frontend/dist")
+frontend_dist_dir = os.path.join(os.path.dirname(__file__), "./static/dist")
 app.mount("/static", StaticFiles(directory=frontend_dist_dir), name="static")
 
 @app.get("/hello")
