@@ -26,3 +26,8 @@ async def serve_spa(full_path: str):
     if os.path.exists(file_path) and not os.path.isdir(file_path):
         return FileResponse(file_path)
     return FileResponse(os.path.join(frontend_dist_dir, "index.html"))
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
